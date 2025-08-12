@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Creative, interactive, and responsive portfolio landing page.">
+  <title>My Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="fixed w-full bg-gray-800 bg-opacity-90 z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">My Portfolio</h1>
+      <nav>
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <ul id="menu" class="hidden md:flex space-x-6">
+          <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+          <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
+          <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+      <ul class="flex flex-col items-center py-4 space-y-4">
+        <li><a href="#about" class="hover:text-yellow-400">About</a></li>
+        <li><a href="#projects" class="hover:text-yellow-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-bg min-h-screen flex items-center justify-center">
+    <div class="text-center text-white reveal">
+      <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm Aqiufana</h2>
+      <p class="text-lg md:text-xl text-gray-200">A Creative Front-End Developer</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 container mx-auto px-4">
+    <div class="reveal-left">
+      <h2 class="text-3xl font-bold mb-6">About Me</h2>
+      <p class="text-gray-300 leading-relaxed">
+        I am a passionate developer who loves to create interactive and user-friendly websites. 
+        I have experience in HTML, CSS, JavaScript, and modern frameworks.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-800">
+  <div class="container mx-auto px-4 reveal">
+    <h2 class="text-3xl font-bold mb-6">Projects</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <a href="https://example.com/project1" target="_blank" class="bg-gray-700 p-6 rounded-lg shadow-lg hover:scale-105 transform transition block">
+        <h3 class="text-xl font-bold mb-2">Project One</h3>
+        <p class="text-gray-300">Description of the first project.</p>
+      </a>
+
+      <a href="https://example.com/project2" target="_blank" class="bg-gray-700 p-6 rounded-lg shadow-lg hover:scale-105 transform transition block">
+        <h3 class="text-xl font-bold mb-2">Project Two</h3>
+        <p class="text-gray-300">Description of the second project.</p>
+      </a>
+
+      <a href="https://example.com/project3" target="_blank" class="bg-gray-700 p-6 rounded-lg shadow-lg hover:scale-105 transform transition block">
+        <h3 class="text-xl font-bold mb-2">Project Three</h3>
+        <p class="text-gray-300">Description of the third project.</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 container mx-auto px-4">
+    <div class="reveal-right">
+      <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+        <p class="text-gray-300 font-bold">Email</p>
+        <p class="text-gray-300 mb-6">yufanaa12@gmail.com 
+      <form id="contactForm" class="space-y-4 max-w-lg">
+        <input type="text" id="name" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none" required>
+        <input type="email" id="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none" required>
+        <textarea id="message" placeholder="Your Message" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none" required></textarea>
+        <button type="submit" class="px-6 py-3 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-500">Send Message</button>
+      </form>
+      <p id="formMessage" class="mt-4 text-green-400 hidden">✅ Message sent successfully!</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
