@@ -46,8 +46,30 @@ window.addEventListener('scroll', reveal);
 reveal();
 
 // Contact Form
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  document.getElementById('formMessage').classList.remove('hidden');
-  this.reset();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      document.getElementById('formMessage').classList.remove('hidden');
+      document.getElementById('formError').classList.add('hidden');
+      form.reset();
+    } else {
+      document.getElementById('formError').classList.remove('hidden');
+      document.getElementById('formMessage').classList.add('hidden');
+    }
+  } catch (error) {
+    document.getElementById('formError').classList.remove('hidden');
+    document.getElementById('formMessage').classList.add('hidden');
+  }
 });
+
