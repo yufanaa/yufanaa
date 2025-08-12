@@ -82,20 +82,35 @@
 </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 container mx-auto px-4">
-    <div class="reveal-right">
-      <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-        <p class="text-gray-300 font-bold">Email</p>
-        <p class="text-gray-300 mb-6">yufanaa12@gmail.com 
-      <form id="contactForm" class="space-y-4 max-w-lg">
-        <input type="text" id="name" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none" required>
-        <input type="email" id="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none" required>
-        <textarea id="message" placeholder="Your Message" class="w-full p-3 rounded bg-gray-700 text-white focus:outline-none" required></textarea>
-        <button type="submit" class="px-6 py-3 bg-yellow-400 text-black font-bold rounded hover:bg-yellow-500">Send Message</button>
-      </form>
-      <p id="formMessage" class="mt-4 text-green-400 hidden">✅ Message sent successfully!</p>
-    </div>
-  </section>
+  <section id="contact" class="py-20 bg-gray-900">
+  <div class="container mx-auto px-4 reveal">
+    <h2 class="text-3xl font-bold mb-6">Contact</h2>
+
+    <form id="contactForm" 
+          action="https://getform.io/f/bnlnerdb" 
+          method="POST" 
+          class="space-y-4 max-w-md">
+
+      <input type="text" name="name" placeholder="Your Name" required
+        class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700">
+
+      <input type="email" name="email" placeholder="Your Email" required
+        class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700">
+
+      <textarea name="message" placeholder="Your Message" rows="4" required
+        class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700"></textarea>
+
+      <button type="submit" class="btn bg-yellow-500 px-4 py-2 rounded text-black">
+        Send Message
+      </button>
+
+    </form>
+
+    <p id="formMessage" class="hidden text-green-400 mt-4">✅ Message sent successfully!</p>
+    <p id="formError" class="hidden text-red-400 mt-4">❌ Failed to send message. Please try again.</p>
+  </div>
+</section>
+
 
   <script src="script.js"></script>
 </body>
