@@ -30,3 +30,7 @@ html {
   background-size: cover;
   background-position: center;
 }
+
+.social-icon:hover {
+  transform: scale(1.15);
+}
